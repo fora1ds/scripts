@@ -139,7 +139,7 @@ class SpeedTest:
             else:
                 self._request(url=self.UPLOAD, content=b'Q' * self.PACKET_SIZE, url_method='POST')
         except :
-            raise SpeedTestError(message='Failed to get {} speed'.format(type.lower()))
+            raise SpeedTestError(message='Failed to get {} speed'.format(speed.lower()))
 
         Done = time()
 
