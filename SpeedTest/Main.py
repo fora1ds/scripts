@@ -19,7 +19,7 @@ def Convert_To_JSON(servers, keys):
 
             print('"{}": "{}"'.format(key, server.get(key)), end=Last)
 
-Argument = argparse.ArgumentParser(description='Internet Speed Test Using Ookla speedtest.net', add_help=False, usage=argparse.SUPPRESS)
+Argument = argparse.ArgumentParser(description='Internet Speed Test Using Ookla www.speedtest.net', add_help=False, usage=argparse.SUPPRESS)
 
 Argument.add_argument('-h', '--help', action='help', default=argparse.SUPPRESS, help='Show This Help Message')
 Argument.add_argument('--all', action='store_true', help='Perform Download And Upload Test')
