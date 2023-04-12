@@ -37,6 +37,13 @@ Internet = SpeedTest.SpeedTest()
 
 Statistics = {}
 
+if Arguments['server'] is not None:
+    if Arguments['server'] <= len(Internet.servers()):
+        Internet.select_server(number=Arguments['server'])
+    else:
+        print('The Value Is Greater Than The Number Of Servers In The List')
+        exit(0)
+
 if Arguments['all'] == True:
     Statistics['Download'] = Internet.download()
     Statistics['Upload'] = Internet.upload()
@@ -50,13 +57,6 @@ elif Arguments['no_perform_upload'] == True:
 if Arguments['servers'] == True:
     Convert_To_JSON(Internet.servers(),
             ['name', 'country', 'sponsor', 'host', 'distance', 'lat', 'lon', 'id'])
-
-if Arguments['server'] is not None:
-    if Arguments['server'] <= len(Internet.servers()):
-        Internet.select_server(number=Arguments['server'])
-    else:
-        print('The Value Is Greater Than The Number Of Servers In The List')
-        exit(0)
 
 if Arguments['format'] != None:
     Types = SpeedTest.Format()
